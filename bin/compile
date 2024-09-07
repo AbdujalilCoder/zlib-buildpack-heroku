@@ -10,10 +10,11 @@ echo "Zlib-1.2.9 o'rnatilishi boshlandi..."
 mkdir -p $BUILD_DIR/.profile.d
 
 # Tarballni chiqarish uchun to'g'ri yo'l
-TAR_FILE=$BUILD_DIR/zlib-1.2.9
+TAR_FILE=/zlib-1.2.9
 
 # Tarballni chiqarish
 if [ -d "$TAR_FILE" ]; then
+  cp -r $TAR_FILE $BUILD_DIR
   echo "$TAR_FILE fayli mavjut"
   ls
 else
