@@ -6,9 +6,6 @@ ENV_DIR=$3
 
 echo "Starting zlib-1.2.9 installation..."
 
-# Tarballni chiqarish
-tar -xzf $BUILD_DIR/../zlib-1.2.9.tar.gz -C $BUILD_DIR
-
 # Zlib manziliga o'tish
 cd $BUILD_DIR/zlib-1.2.9
 
