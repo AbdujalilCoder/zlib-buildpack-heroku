@@ -15,7 +15,9 @@ TAR_FILE=$BUILD_DIR/zlib-1.2.9
 # Tarballni chiqarish
 if [ -f "$TAR_FILE" ]; then
   echo "$TAR_FILE fayli mavjut"
+  ls
 else
+  ls
   echo "Xatolik: zlib-1.2.9 fayli topilmadi: $TAR_FILE"
   exit 1
 fi
