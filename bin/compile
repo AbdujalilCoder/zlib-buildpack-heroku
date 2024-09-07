@@ -31,6 +31,7 @@ fi
 cd $TAR_FILE || { echo "Zlib manzilga o'tishda xatolik"; exit 1; }
 
 # Konfiguratsiya, qurish va o'rnatish
+chmod +x configure
 ./configure --prefix=$BUILD_DIR/zlib
 make
 make install
