@@ -10,7 +10,7 @@ echo "Starting zlib-1.2.9 installation..."
 mkdir -p $BUILD_DIR/.profile.d
 
 # Unpacking zlib tarball
-tar -xzf $BUILD_DIR/zlib-1.2.9.tar.gz -C $BUILD_DIR
+tar -xzf $BUILD_DIR/../zlib-1.2.9.tar.gz -C $BUILD_DIR
 
 # Navigate to zlib source directory
 cd $BUILD_DIR/zlib-1.2.9
