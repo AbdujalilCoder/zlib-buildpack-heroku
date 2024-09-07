@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Release script for zlib buildpack
-cat <<EOF
----
-config_vars:
-EOF

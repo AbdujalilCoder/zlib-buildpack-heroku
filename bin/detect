@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Detect file for custom zlib buildpack
-if [ -f "zlib-1.2.9.tar.gz" ]; then
-  echo "zlib"
-  exit 0
-else
-  exit 1
-fi
