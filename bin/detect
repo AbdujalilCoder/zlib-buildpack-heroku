@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This script detects if the buildpack is applicable
+if [ -f zlib-1.2.9.tar.gz ]; then
+  echo "Zlib Buildpack"
+  exit 0
+else
+  echo "Zlib source not found"
+  exit 1
+fi
