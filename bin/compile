@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+echo "Starting zlib-1.2.9 installation..."
+
+# Tarballni chiqarish
+tar -xzf $BUILD_DIR/../zlib-1.2.9.tar.gz -C $BUILD_DIR
+
+# Zlib manziliga o'tish
+cd $BUILD_DIR/zlib-1.2.9
+
+# Zlibni sozlash, yasash va o'rnatish
+./configure --prefix=$BUILD_DIR/zlib
+make
+make install
+
+# Kerakli muhit o'zgaruvchilarini eksport qilish
+echo "export LD_LIBRARY_PATH=$BUILD_DIR/zlib/lib:\$LD_LIBRARY_PATH" >> $ENV_DIR/zlib.sh
+echo "export PATH=$BUILD_DIR/zlib/bin:\$PATH" >> $ENV_DIR/zlib.sh
+
+echo "zlib-1.2.9 installation completed."
