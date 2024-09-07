@@ -1,0 +1,27 @@
+#!/bin/bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+echo "Starting zlib-1.2.9 installation..."
+
+# Ensure .profile.d directory exists
+mkdir -p $BUILD_DIR/.profile.d
+
+# Unpacking zlib tarball
+tar -xzf $BUILD_DIR/zlib-1.2.9.tar.gz -C $BUILD_DIR
+
+# Navigate to zlib source directory
+cd $BUILD_DIR/zlib-1.2.9
+
+# Configure, make and install zlib
+./configure --prefix=$BUILD_DIR/zlib
+make
+make install
+
+# Export necessary environment variables
+echo "export LD_LIBRARY_PATH=$BUILD_DIR/zlib/lib:\$LD_LIBRARY_PATH" >> $BUILD_DIR/.profile.d/zlib.sh
+echo "export PATH=$BUILD_DIR/zlib/bin:\$PATH" >> $BUILD_DIR/.profile.d/zlib.sh
+
+echo "zlib-1.2.9 installation completed."
